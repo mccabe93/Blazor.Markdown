@@ -1,11 +1,6 @@
-﻿using Ganss.XSS;
+﻿using Ganss.Xss;
 using Markdig;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blazor.Markdown
 {
@@ -13,7 +8,8 @@ namespace Blazor.Markdown
     {
         private string _content;
 
-        [Inject] public IHtmlSanitizer HtmlSanitizer { get; set; }
+        [Inject]
+        public IHtmlSanitizer HtmlSanitizer { get; set; }
 
         [Parameter]
         public string Content
@@ -33,7 +29,10 @@ namespace Blazor.Markdown
             if (!string.IsNullOrWhiteSpace(_content))
             {
                 // Convert markdown string to HTML
-                var html = Markdig.Markdown.ToHtml(value, new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
+                var html = Markdig.Markdown.ToHtml(
+                    value,
+                    new MarkdownPipelineBuilder().UseAdvancedExtensions().Build()
+                );
 
                 // Sanitize HTML before rendering
                 var sanitizedHtml = HtmlSanitizer.Sanitize(html);

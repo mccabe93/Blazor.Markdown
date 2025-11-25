@@ -1,24 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <Authors>Tananut Songsiriwith</Authors>
-    <Company>Nancom Limited Company</Company>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <Authors>Tananut Songsiriwith, Michael McCabe</Authors>
+    <Company>Nancom Ltd., 1130lab llc.</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>Razor Component Library for Convert Markdown text to HTML DOM</Description>
-    <PackageProjectUrl>https://github.com/nantcom/Blazor.Markdown</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/mccabe93/Blazor.Markdown</PackageProjectUrl>
     <PackageTags>Markdown,Blazor</PackageTags>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
   </PropertyGroup>
 
-  
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlSanitizer" Version="5.0.376" />
-    <PackageReference Include="Markdig" Version="0.23.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.3" />
+    <PackageReference Include="HtmlSanitizer" Version="9.1.891-beta" />
+    <PackageReference Include="Markdig" Version="0.44.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,5 +30,4 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
