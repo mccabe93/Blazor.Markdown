@@ -7,7 +7,8 @@
     <Description>Razor Component Library for Convert Markdown text to HTML DOM</Description>
     <PackageProjectUrl>https://github.com/mccabe93/Blazor.Markdown</PackageProjectUrl>
     <PackageTags>Markdown,Blazor</PackageTags>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+    <PackageId>$(AssemblyName).net</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

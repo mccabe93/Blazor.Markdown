@@ -6,19 +6,17 @@ namespace Blazor.Markdown
 {
     public class MarkdownModel : ComponentBase
     {
-        private string _content;
-
         [Inject]
         public IHtmlSanitizer HtmlSanitizer { get; set; }
 
         [Parameter]
         public string Content
         {
-            get => _content;
+            get;
             set
             {
-                _content = value;
-                HtmlContent = ConvertStringToMarkupString(_content);
+                field = value;
+                HtmlContent = ConvertStringToMarkupString(field);
             }
         }
 
@@ -26,7 +24,7 @@ namespace Blazor.Markdown
 
         private MarkupString ConvertStringToMarkupString(string value)
         {
-            if (!string.IsNullOrWhiteSpace(_content))
+            if (!string.IsNullOrWhiteSpace(Content))
             {
                 // Convert markdown string to HTML
                 var html = Markdig.Markdown.ToHtml(
